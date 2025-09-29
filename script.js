@@ -1,33 +1,30 @@
 function firstWord(s) {
   // your code here
 
-	// Case 1: empty string
-  if (s.length === 0) {
-    return "";
-  }
-
-  let word = "";
-  let started = false; // track if first non-space started
-
+	Here's the code using let and const wherever applicable:
+javascriptfunction firstWord(s) {
+  // Step 1: Create a variable to store the first word (will change, so use let)
+  let word = '';
+  
+  // Step 2: Loop through each character in the string
   for (let i = 0; i < s.length; i++) {
-    let ch = s[i];
-
-    // Ignore leading spaces 
-    if (!started && ch === " ") {
-      continue;
-    }
-
-    // If we hit a space *after* starting, stop
-    if (started && ch === " ") {
+    
+    // Step 3: Get the current   character (doesn't change, so use const)
+    let character = s[i];
+    
+    // Step 4: Check if the character is a space
+    if (character === ' ') {
+      // Step 5: If we find a space, stop the loop (we found the end of first word)
       break;
     }
-
-    // Add character to word
-    word += ch;
-    started = true;
+    
+    // Step 6: If it's not a space, add the character to our word
+    word = word + character;
   }
-
+  
+  // Step 7: Return the first word
   return word;
+ 
 	
 }
 
